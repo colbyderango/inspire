@@ -1,0 +1,47 @@
+#body{
+    background-image: url('https://source.unsplash.com/category/nature');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+.header{
+    text-align: center;
+}
+img{
+    width: 10%; 
+}
+
+#root{
+    
+  background-color: (rgba 16, 73, 22, .6);
+    width: 250px;
+}
+
+.completed{
+    text-decoration: line-through;
+    
+}
+
+#quote{
+    justify-content: center;
+    display: flex;
+    
+}
+
+#txt{
+    text-align: center;
+    font-size: 70px;
+}
+
+#weather{
+    width: 100px;
+
+
+
+}
+
+.panel{
+    background-color: (rgba 16, 73, 22, .6);
+}

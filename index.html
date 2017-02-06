@@ -3,27 +3,69 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Inspire</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/css/style.css">
+	
 </head>
 
-<body id="body">
-	<div id="weather">
-		{{weather}}
+<body onload="startTime()" id="body" >
+	
+
+
+
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+	<div id="weather" class="panel" align="left">
+		<h1>{{weather.name}}</h3>
+		<h3 @click="toggleTemp">{{displayTemp}}</h3>
+		<h4>{{weather.icon}}</h4>
+		<h4></h4>
 	</div>
 
-	<div id="quote">
 
+
+
+<div class="container todos"  align="right">
+	
+	<div  id="root" class="panel">
+		<form @submit.prevent="submitTodo(todo)">
+			<input type="text" v-model="todo">
+		</form>
+
+		<div class="todos">
+			<ul v-for="(item, index) in todos">
+				<li :class="{completed:item.completed}" @click="completedTodo(item)">
+					{{item.task}}
+					<button type="button" @click="removeItem(item)" >Done</button>
+				</li>
+			</ul>
+		</div>
+		</div>
+	
 	</div>
-
-	<div id="todo">
-
 	</div>
+	</div>
+	</div>
+	<div id="txt">
+
+</div>
+	<div class="container">
+		<div class="row">
+		<div class="col-sm-6 col-sm-offset-3">
+		<div id="quote" class="panel">
+		<div v-on:mouseover= "mouseOver"><h3>{{currentQuote}}</h3></div>
+		
+		<div v-show="active" ><h2>{{quote.author}}</h2></div>
+		</div>
+	</div>
+</div>
+</div>
 
 
 
-
-		<!--JS Libraries-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
+	<!--JS Libraries-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.js"></script>
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
 	<!--Initialize App-->
@@ -32,7 +74,7 @@
 	<script src="app/components/image/image-service.js"></script>
 	<script src="app/components/quote/quote-service.js"></script>
 	<script src="app/components/todo/todo-service.js"></script>
-
+	<script src="clock.js"></script>
 	<!--Load your scripts below-->
 	<script src="app/components/weather/weather-controller.js"></script>
 	<script src="app/components/image/image-controller.js"></script>

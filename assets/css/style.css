@@ -17,6 +17,7 @@ img{
     
   background-color: (rgba 16, 73, 22, .6);
     width: 250px;
+    
 }
 
 .completed{
@@ -27,6 +28,7 @@ img{
 #quote{
     justify-content: center;
     display: flex;
+    height: responsive;
     
 }
 
@@ -43,5 +45,6 @@ img{
 }
 
 .panel{
-    background-color: (rgba 16, 73, 22, .6);
+    background-color:rgba(192,192,192,0.4);
 }
+
